@@ -3,8 +3,21 @@ const modal = document.getElementById('successModal');
 const closeBtn = document.querySelector('.close');
 const modalData = document.getElementById('modalData');
 
+
 const nameError = document.getElementById('nameError');
 const mobileError = document.getElementById('mobileError');
+
+const mobileInput = document.getElementById('mobile');
+
+mobileInput.addEventListener('keypress', function (e) {
+  if (!/[0-9]/.test(e.key)) {
+    e.preventDefault();
+  }
+});
+
+mobileInput.addEventListener('input', function () {
+  this.value = this.value.replace(/[^0-9]/g, '');
+});
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -24,7 +37,7 @@ form.addEventListener('submit', function(event) {
     nameError.textContent = "";
   }
 
-  const mobilePattern = /^[6-9]\d{9}$/;
+  const mobilePattern = /^[6-9][0-9]{9}$/;
   if (!mobilePattern.test(mobile)) {
     mobileError.textContent = "Enter a valid 10-digit Indian mobile number.";
     valid = false;
