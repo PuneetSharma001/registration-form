@@ -14,6 +14,7 @@
       <div class="form-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" placeholder="Enter your name" required>
+        <small class="error" id="nameError"></small>
       </div>
       <div class="form-group">
         <label for="regno">Registration No</label>
@@ -26,6 +27,7 @@
       <div class="form-group">
         <label for="mobile">Mobile No</label>
         <input type="tel" id="mobile" placeholder="Enter mobile no." required>
+        <small class="error" id="mobileError"></small>
       </div>
       <div class="form-group">
         <label for="stream">Stream</label>
@@ -46,7 +48,7 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h3>REGISTRATION SUCCESSFULL!</h3>
-      <p>Your form has been submitted successfully.</p>
+      <p id="modalData"></p>
     </div>
   </div>
 
